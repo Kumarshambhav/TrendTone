@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Predictor</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Trend <span>Tone</span></h1>
+    
+    <form action="/predict" method="POST">
+        <label for="shirtColor">Enter a Shirt Color (e.g., red, #3498db):</label>
+        <input type="text" name="shirtColor" id="shirtColor" required>
+        <button type="submit">Get Pant Suggestions</button>
+    </form>
+
+    <% if (shirtColor) { %>
+        <h2>For a shirt color of "<%= shirtColor %>", consider these pant colors:</h2>
+        <ul>
+            <% pantSuggestions.forEach(color => { %>
+                <li class="color-box" style="background-color: <%= color %>;">
+                    <%= color %>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+    <p>Suggestions For using color Choose DarkTone for pants and light color or dark color for shirt</p>
+    <footer>
+        <p>Developed by <strong>Malviyan Shambhav</strong></p>
+    </footer>
+</body>
+</html>
