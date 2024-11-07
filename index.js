@@ -1,7 +1,8 @@
 const express = require('express');
 const tinycolor = require('tinycolor2');
 const app = express();
-const port = 3000;
+require('dotenv').config()
+const port = process.env.PORT;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
